@@ -40,12 +40,15 @@ warnings.filterwarnings("ignore", message="DataFrame is highly fragmented*")
 # ------------------------------------------------------------
 # SYMBOL LIST
 # ------------------------------------------------------------
-SYMBOLS = [
-    'BAJFINANC', 'BANKBAROD',  'BANKINDIA', 'DABUR',
-    'HDFCBANK', 'HINDUNILV', 'ICICIBANK', 'INDUSINDB', 'INFY', 'ITC',
-    'KOTAKBANK', 'LT', 'NOCIL', 'RAJESHEXP', 'SBIN', 'SUZLON', 'TCS', 'TITAN'
-]
-#
+
+SYMBOLS = ['ADA', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'XRP', 'SOL', 'TRX ', 'LINK', 'XLM']
+
+# SYMBOLS = [
+#     'BAJFINANC', 'BANKBAROD',  'BANKINDIA', 'DABUR',
+#     'HDFCBANK', 'HINDUNILV', 'ICICIBANK', 'INDUSINDB', 'INFY', 'ITC',
+#     'KOTAKBANK', 'LT', 'NOCIL', 'RAJESHEXP', 'SBIN', 'SUZLON', 'TCS', 'TITAN'
+# ]
+
 # SYMBOLS = [
 #     'ADANIENT', 'AXISBANK', 'BAJFINANC', 'BANKBAROD',  'BANKINDIA', 'DABUR',
 #     'HDFCBANK', 'HINDUNILV', 'ICICIBANK', 'INDUSINDB', 'INFY', 'ITC',
@@ -59,8 +62,8 @@ def process_symbol(symbol: str):
 
     print(f"▶ Starting {symbol}")
 
-    csv_file_path = rf"C:\PYTHON\historical_data\INDIA\{symbol}\{symbol}_1day_candlesticks_all.csv"
-    output_dir = rf"C:\PYTHON\historical_data\INDIA\{symbol}\output_1day_parquet"
+    csv_file_path = rf"C:\PYTHON\historical_data\CRYPTO\{symbol}\{symbol}_1day_candlesticks_all.csv"
+    output_dir = rf"C:\PYTHON\historical_data\CRYPTO\{symbol}\output_1day_parquet"
     os.makedirs(output_dir, exist_ok=True)
 
     # Read CSV
@@ -138,3 +141,4 @@ if __name__ == "__main__":
         pool.map(process_symbol, SYMBOLS)
 
     print("\n ALL SYMBOLS COMPLETED SUCCESSFULLY\n")
+
