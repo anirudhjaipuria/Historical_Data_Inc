@@ -43,17 +43,14 @@ warnings.filterwarnings("ignore", message="DataFrame is highly fragmented*")
 
 SYMBOLS = ['ADA', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'XRP', 'SOL', 'TRX ', 'LINK', 'XLM']
 
-# SYMBOLS = [
-#     'BAJFINANC', 'BANKBAROD',  'BANKINDIA', 'DABUR',
-#     'HDFCBANK', 'HINDUNILV', 'ICICIBANK', 'INDUSINDB', 'INFY', 'ITC',
-#     'KOTAKBANK', 'LT', 'NOCIL', 'RAJESHEXP', 'SBIN', 'SUZLON', 'TCS', 'TITAN'
-# ]
+# SYMBOLS = ['ADANIENT', 'AXISBANK', 'BAJFINANC', 'BANKBAROD', 'BANKINDIA', 'DABUR',
+#            'HDFCBANK', 'HINDUNILV', 'ICICIBANK ', 'INDUSINDB', 'INFY', 'ITC',
+#            'KOTAKBANK', 'LT', 'NOCIL', 'RAJESHEXP', 'SBIN', 'SUZLON', 'TCS', 'TITAN ']
 
-# SYMBOLS = [
-#     'ADANIENT', 'AXISBANK', 'BAJFINANC', 'BANKBAROD',  'BANKINDIA', 'DABUR',
-#     'HDFCBANK', 'HINDUNILV', 'ICICIBANK', 'INDUSINDB', 'INFY', 'ITC',
-#     'KOTAKBANK', 'LT', 'NOCIL', 'RAJESHEXP', 'SBIN', 'SUZLON', 'TCS', 'TITAN'
-# ]
+# SYMBOLS = ['AAPL', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AMZN', 'AVGO', 'BAC', 'COST', 'CRM',
+#            'CSCO', 'CVX', 'DIS ', 'GOOGL', 'GS', 'HD', 'JNJ ', 'JPM', 'KO', 'LLY',
+#            'MA', 'MCD', 'META', 'MRK', 'MSFT', 'NFLX', 'NVDA', 'ORCL', 'PEP', 'PG',
+#            'QCOM', 'TSLA', 'UNH', 'V', 'WFC', 'WMT', 'XOM']
 
 # ------------------------------------------------------------
 # CORE PROCESSING FUNCTION (ONE SYMBOL = ONE CPU CORE)
@@ -141,4 +138,5 @@ if __name__ == "__main__":
         pool.map(process_symbol, SYMBOLS)
 
     print("\n ALL SYMBOLS COMPLETED SUCCESSFULLY\n")
+
 
