@@ -98,8 +98,8 @@ if __name__ == '__main__':
         # ────────────────────────────────────────────────
         #   Paths
         # ────────────────────────────────────────────────
-        csv_file_path = rf'C:\PYTHON\historical_data\CRYPTO\{SYMBOL}\{SYMBOL}_4hour_candlesticks_all.csv'
-        output_dir    = rf'C:\PYTHON\historical_data\CRYPTO\{SYMBOL}\output_4hour_parquet'
+        csv_file_path = rf'C:\PYTHON\historical_data\CRYPTO\{SYMBOL}\{SYMBOL}_1hour_candlesticks_all.csv'
+        output_dir    = rf'C:\PYTHON\historical_data\CRYPTO\{SYMBOL}\output_1hour_parquet'
 
         os.makedirs(output_dir, exist_ok=True)
 
@@ -115,5 +115,6 @@ if __name__ == '__main__':
             pool.map(process_chunk, tasks)
 
         print(f"Finished processing {SYMBOL}\n")
+
 
     print("All symbols processed.")
