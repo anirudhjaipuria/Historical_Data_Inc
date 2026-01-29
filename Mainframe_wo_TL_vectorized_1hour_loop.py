@@ -112,10 +112,12 @@ if __name__ == '__main__':
 
         # Run in parallel
         with mp.Pool(processes=mp.cpu_count()) as pool:
+        # with mp.Pool(processes=24) as pool:
             pool.map(process_chunk, tasks)
 
         print(f"Finished processing {SYMBOL}\n")
 
 
     print("All symbols processed.")
+
 
