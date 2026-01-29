@@ -78,7 +78,7 @@ def process_chunk(args):
         df = calculate_support_levels(df, lookback_years=25, pivot_threshold=0.25)
         df = calculate_golden_ratios(df)
         df = calculate_abc_corrections(df)
-        df = calculate_abc_extensions(df)
+        # df = calculate_abc_extensions(df)
 
         # Save final result with last date in filename
         last_date = df['date'].iloc[-1]
@@ -115,5 +115,6 @@ if __name__ == '__main__':
             pool.map(process_chunk, tasks)
 
         print(f"Finished processing {SYMBOL}\n")
+
 
     print("All symbols processed.")
