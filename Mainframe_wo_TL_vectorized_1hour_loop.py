@@ -42,7 +42,7 @@ SYMBOLS = ['ADA', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'XRP', 'SOL', 'TRX ', 'LIN
 #            'KOTAKBANK', 'LT', 'NOCIL', 'RAJESHEXP', 'SBIN', 'SUZLON', 'TCS', 'TITAN ']
 
 # SYMBOLS = ['AAPL', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AMZN', 'AVGO', 'BAC', 'COST', 'CRM',
-#            'CSCO', 'CVX', 'DIS ', 'GOOGL', 'GS', 'HD', 'JNJ ', 'JPM', 'KO', 'LLY',
+#            'CSCO', 'CVX', 'DIS', 'GOOGL', 'GS', 'HD', 'JNJ', 'JPM', 'KO', 'LLY',
 #            'MA', 'MCD', 'META', 'MRK', 'MSFT', 'NFLX', 'NVDA', 'ORCL', 'PEP', 'PG',
 #            'QCOM', 'TSLA', 'UNH', 'V', 'WFC', 'WMT', 'XOM']
 
@@ -119,5 +119,6 @@ if __name__ == '__main__':
 
 
     print("All symbols processed.")
+
 
 
