@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import ta
 
 def Candlestick_Type(ohlc: pd.DataFrame):
 
@@ -71,7 +72,7 @@ def Candlestick_Type(ohlc: pd.DataFrame):
     ohlc['Inverted_Hammer'] = Inverted_Hammer
 
     # Recognizing Bullish Harami
-    for i in range(1, len(CO)):
+    for i in range(2, len(CO)):
         # Calculate upper/lower wick and body sizes
         body_1 = abs(CO[i - 1] - CC[i - 1])  # First candle body size
         body_2 = abs(CO[i] - CC[i])  # Second candle body size
@@ -89,7 +90,7 @@ def Candlestick_Type(ohlc: pd.DataFrame):
     ohlc['Bullish_Harami'] = Bullish_Harami
 
     # Recognizing Morning Star
-    for i in range(1, len(CO)):
+    for i in range(2, len(CO)):
         if (CH[i - 1] - CL[i - 1]) > 0:
             if (CO[i - 2] > CC[i - 2]  # First candle is bearish
                     and abs(CO[i - 2] - CC[i - 2]) / (CH[i - 2] - CL[i - 2]) > 0.603  # First candle has a strong body
@@ -114,7 +115,7 @@ def Candlestick_Type(ohlc: pd.DataFrame):
     ohlc['Morning_Star'] = Morning_Star
 
     # Recognizing Bullish Piercing
-    for i in range(1, len(CO)):
+    for i in range(2, len(CO)):
         if (CC[i - 1] < CO[i - 1] and CO[i] < CL[i - 1] and CO[i - 1] > CC[i] > CC[i - 1] + (
                 (CO[i - 1] - CC[i - 1]) / 2)) \
                 and CH[i] < CO[i - 1] and CL[i] < CL[i - 1] and CL[i - 1] < CL[i - 2] and CH[i - 1] < CH[i - 2] and CC[
@@ -125,7 +126,7 @@ def Candlestick_Type(ohlc: pd.DataFrame):
     ohlc['Bullish_Piercing'] = Bullish_Piercing
 
     # Recognizing Three White Soldiers
-    for i in range(1, len(CO)):
+    for i in range(2, len(CO)):
         if (CO[i - 2] < CC[i - 2]  # First candle is bullish
                 and CO[i - 1] < CC[i - 1]  # Second candle is bullish
                 and CO[i] < CC[i]  # Third candle is bullish
@@ -145,7 +146,7 @@ def Candlestick_Type(ohlc: pd.DataFrame):
     ohlc['Three_White_Soldiers'] = Three_White_Soldiers
 
     # Recognizing Tweezer Bottom
-    for i in range(1, len(CO)):
+    for i in range(2, len(CO)):
         # Calculate upper/lower wick and body sizes
         body_1 = abs(CO[i - 1] - CC[i - 1])  # First candle body size
         upper_wick_1 = CH[i - 1] - max(CO[i - 1], CC[i - 1])  # First candle upper wick
@@ -173,7 +174,7 @@ def Candlestick_Type(ohlc: pd.DataFrame):
     # ---------------------------------------------Bearish Patterns----------------------------
 
     # Recognizing Evening Star
-    for i in range(1, len(CO)):
+    for i in range(2, len(CO)):
         if (CH[i - 1] - CL[i - 1]) > 0:
             if (CO[i - 2] < CC[i - 2]  # First candle is bullish
                     and abs(CO[i - 2] - CC[i - 2]) / (CH[i - 2] - CL[i - 2]) > 0.603  # First candle has a strong body
@@ -222,7 +223,7 @@ def Candlestick_Type(ohlc: pd.DataFrame):
     ohlc['Bearish_Harami'] = Bearish_Harami
 
     # Recognizing Bearish Piercing (Dark Cloud Cover)
-    for i in range(1, len(CO)):
+    for i in range(2, len(CO)):
         if (CC[i - 1] > CO[i - 1] and CO[i] > CH[i - 1] and CO[i - 1] < CC[i] < CC[i - 1] - (
                 (CC[i - 1] - CO[i - 1]) / 2)) \
                 and CL[i] > CO[i - 1] and CH[i] > CH[i - 1] and CH[i - 1] > CH[i - 2] and CL[i - 1] > CL[i - 2] and CC[
@@ -233,7 +234,7 @@ def Candlestick_Type(ohlc: pd.DataFrame):
     ohlc['Bearish_Piercing'] = Bearish_Piercing
 
     # Recognizing Three Black Crows
-    for i in range(1, len(CO)):
+    for i in range(2, len(CO)):
         if (CO[i - 2] > CC[i - 2]  # First candle is bearish
                 and CO[i - 1] > CC[i - 1]  # Second candle is bearish
                 and CO[i] > CC[i]  # Third candle is bearish
@@ -254,7 +255,7 @@ def Candlestick_Type(ohlc: pd.DataFrame):
     ohlc['Three_Black_Crows'] = Three_Black_Crows
 
     # Recognizing Tweezer Top
-    for i in range(1, len(CO)):
+    for i in range(2, len(CO)):
         # First candle components
         body_1 = abs(CO[i - 1] - CC[i - 1])
         upper_wick_1 = CH[i - 1] - max(CO[i - 1], CC[i - 1])
@@ -281,5 +282,6 @@ def Candlestick_Type(ohlc: pd.DataFrame):
 
     # Add pattern to dataframe
     ohlc['Tweezer_Top'] = Tweezer_Top
+
 
     return
