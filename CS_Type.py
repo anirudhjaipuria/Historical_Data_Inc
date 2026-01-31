@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import ta
 
 def Candlestick_Type(ohlc: pd.DataFrame):
 
@@ -285,3 +284,4 @@ def Candlestick_Type(ohlc: pd.DataFrame):
 
 
     return
+
