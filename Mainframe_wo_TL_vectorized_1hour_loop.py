@@ -38,8 +38,8 @@ warnings.filterwarnings('ignore', message='DataFrame is highly fragmented*')
 SYMBOLS = ['ADA', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'XRP', 'SOL', 'TRX ', 'LINK', 'XLM']
 
 # SYMBOLS = ['ADANIENT', 'AXISBANK', 'BAJFINANC', 'BANKBAROD', 'BANKINDIA', 'DABUR',
-#            'HDFCBANK', 'HINDUNILV', 'ICICIBANK ', 'INDUSINDB', 'INFY', 'ITC',
-#            'KOTAKBANK', 'LT', 'NOCIL', 'RAJESHEXP', 'SBIN', 'SUZLON', 'TCS', 'TITAN ']
+#            'HDFCBANK', 'HINDUNILV', 'ICICIBANK', 'INDUSINDB', 'INFY', 'ITC',
+#            'KOTAKBANK', 'LT', 'NOCIL', 'RAJESHEXP', 'SBIN', 'SUZLON', 'TCS', 'TITAN']
 
 # SYMBOLS = ['AAPL', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AMZN', 'AVGO', 'BAC', 'COST', 'CRM',
 #            'CSCO', 'CVX', 'DIS', 'GOOGL', 'GS', 'HD', 'JNJ', 'JPM', 'KO', 'LLY',
@@ -119,6 +119,7 @@ if __name__ == '__main__':
 
 
     print("All symbols processed.")
+
 
 
 
