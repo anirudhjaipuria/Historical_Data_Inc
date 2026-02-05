@@ -91,8 +91,6 @@ def process_chunk(args):
 
 
 if __name__ == '__main__':
-    print(f"Using {mp.cpu_count()} CPU cores available")
-
     for SYMBOL in SYMBOLS:
         print(f"\n{'=' * 60}")
         print(f"Processing {SYMBOL} ...")
@@ -127,7 +125,6 @@ if __name__ == '__main__':
         # print(f"Starting {len(tasks):,} parallel chunks...")
 
         # Adjust number of processes according to your machine
-        # 22 may be too high → memory or thermal throttling possible
         # num_processes = 20  # ← safe default
         num_processes = mp.cpu_count() # ← max CPUs
 
@@ -138,3 +135,4 @@ if __name__ == '__main__':
 
     print("\nAll symbols processed.")
     print("Done.")
+
